@@ -12,12 +12,12 @@ function printHelp(): void {
   console.log(`Claude Code Session Explorer
 
 Usage:
-  ccex [session.jsonl] [--port <number>]
+  ccexplorer [session.jsonl] [--port <number>]
 
 Examples:
-  ccex
-  ccex ~/.claude/projects/my-project/session-id.jsonl
-  ccex --port 4567
+  ccexplorer
+  ccexplorer ~/.claude/projects/my-project/session-id.jsonl
+  ccexplorer --port 4567
 `);
 }
 
@@ -84,7 +84,7 @@ async function main(): Promise<void> {
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     console.error(`Error: ${message}`);
-    console.error("Run `ccex --help` for usage.");
+    console.error("Run `ccexplorer --help` for usage.");
     process.exit(1);
   }
 }

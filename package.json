@@ -10,7 +10,7 @@
   "license": "MIT",
   "type": "module",
   "bin": {
-    "ccex": "./dist/cli.js"
+    "ccexplorer": "./dist/cli.js"
   },
   "files": [
     "dist",

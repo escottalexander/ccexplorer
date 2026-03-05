@@ -1,4 +1,4 @@
-# CCEX - Claude Code Session Explorer
+# Claude Code Session Explorer
 
 A browser-based inspector for Claude Code JSONL session transcripts. Think Chrome DevTools' Network tab, but for understanding what Claude did during a coding session — every tool call, thinking block, context window shift, and subagent spawn laid out on a single interactive timeline.
 
@@ -19,13 +19,13 @@ Claude Code sessions can run for hundreds of turns across multiple subagents, co
 ### Run with npx
 
 ```bash
-npx ccex
+npx ccexplorer
 ```
 
 To open a specific session file:
 
 ```bash
-npx ccex ~/.claude/projects/<project>/<session-id>.jsonl
+npx ccexplorer ~/.claude/projects/<project>/<session-id>.jsonl
 ```
 
 ### Local development
@@ -37,7 +37,7 @@ npm start
 
 Opens the explorer at `http://127.0.0.1:3457`. It auto-discovers all sessions from `~/.claude/projects/`.
 
-`npm start` runs the CLI locally (`ccex`) via `tsx`.
+`npm start` runs the CLI locally (`ccexplorer`) via `tsx`.
 
 ## Features
 
