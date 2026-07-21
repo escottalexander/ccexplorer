@@ -52,6 +52,7 @@ const sessionModalList = document.getElementById("session-modal-list");
 const sessionModalSearchInput = document.getElementById("session-modal-search");
 const sessionModalCloseBtn = document.getElementById("session-modal-close");
 const sessionModalBackdrop = document.getElementById("session-modal-backdrop");
+const sessionCopyBtn = document.getElementById("session-copy-btn");
 let sessionModalOpen = false;
 
 function updateNavigationButtons() {
@@ -1244,6 +1245,21 @@ if (sessionModalTrigger) {
 if (sessionModalCloseBtn) {
   sessionModalCloseBtn.addEventListener("click", () => {
     closeSessionModal();
+  });
+}
+
+if (sessionCopyBtn) {
+  sessionCopyBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const selected = currentSessions.find(
+      (session) => session.sessionKey === state.sessionKey
+    );
+    const sessionId = selected ? selected.fileName : "";
+    if (!sessionId) return;
+    navigator.clipboard.writeText(sessionId).then(() => {
+      sessionCopyBtn.classList.add("copied");
+      setTimeout(() => sessionCopyBtn.classList.remove("copied"), 1500);
+    });
   });
 }
 

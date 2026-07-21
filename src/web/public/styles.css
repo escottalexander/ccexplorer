@@ -74,6 +74,27 @@ body {
   font-size: 12px;
 }
 
+.session-copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted, #888);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.session-copy-btn:hover {
+  color: var(--text, #fff);
+  background: rgba(255,255,255,0.1);
+}
+
+.session-copy-btn.copied {
+  color: #4caf50;
+}
+
 main {
   height: calc(100vh - 48px);
   padding: 10px 14px;
